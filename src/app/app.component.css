@@ -30,11 +30,11 @@
 
 .sidebar-logo {
   position: relative;
-  height: 50px;
+  height: 64px;
   padding-left: 18px;
   overflow: hidden;
   line-height: 64px;
-  background: #001529;
+  background: #fff;
   transition: all .3s;
 }
 
@@ -53,7 +53,7 @@
 #h1 {
   display: inline;
   margin: 5px 0 0 20px;
-  color: gold;
+  color: #1890ff;
   font-weight: 600;
   font-size: 16px;
   font-family: Avenir,Helvetica Neue,Arial,Helvetica,sans-serif;
