@@ -6,29 +6,37 @@
             [(nzCollapsed)]="isCollapsed"
             [nzTrigger]="null">
     <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
+      <!--<a href="https://ng.ant.design/" target="_blank">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
         <h1>Ant Design Of Angular</h1>
+      </a>-->
+      <a href="http://localhost:4200" target="_blank">
+        <img id="imgLogo1" src="./assets/logo1.png" alt="logo1">
+        <!--<img id="imgLogo2" src="./assets/logo2.png" alt="logo2">-->
+        <h1 id="logoh1"> REFLUB COMPANY </h1>
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Employee</a>
+            <a routerLink="/welcome">Administration</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome/list">List</a>
+            <a routerLink="/list">List Employee</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/add">Add</a>
+            <a routerLink="/add">Add Employee</a>
           </li>
         </ul>
       </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+      <li nz-submenu nzOpen nzTitle="Settings" nzIcon="setting">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
+            <a>Configure</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Update</a>
           </li>
         </ul>
       </li>
