@@ -1,1 +1,109 @@
-<p>emp-list works!</p>
+<!--<nz-table #basicTable [nzData]="employees">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Sex</th>
+    <th>Age</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Salary</th>
+    <th>Entry_date</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of employees">
+    <td>{{ employee.ID }}</td>
+    <td>{{ employee.Name }}</td>
+    <td>{{ employee.Sex }}</td>
+    <td>{{ employee.Age }}</td>
+    <td>{{ employee.Phone }}</td>
+    <td>{{ employee.Email }}</td>
+    <td>{{ employee.Address }}</td>
+    <td>{{ employee.Salary }}</td>
+    <td>{{ employee.Entry_Date }}</td>
+    <td>
+      <a>Modify</a>
+      <nz-divider nzType="vertical"></nz-divider>
+      <a>Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>-->
+
+<nz-table #editRowTable nzBordered [nzData]="listOfData">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th nzWidth="15%">Name</th>
+    <th>Sex</th>
+    <th>Age</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th nzWidth="15%">Address</th>
+    <th>Salary</th>
+    <th>Entry_Date</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of editRowTable.data" class="editable-row">
+    <td>{{data.id}}</td>
+    <td>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.name }}
+      </div>
+      <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.name" (blur)="stopEdit()" />
+    </td>
+
+    <td>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+      {{ data.sex }}
+      </div>
+      <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.name" (blur)="stopEdit()" />
+    </td>
+
+    <td>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.age }}
+      </div>
+    </td>
+
+    <td>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.phone }}
+      </div>
+    </td>
+
+    <td>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.email }}
+      </div>
+    </td>
+
+    <td>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.address }}
+      </div>
+    </td>
+
+    <td>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.salary }}
+      </div>
+    </td>
+
+    <td>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.entry_date }}
+      </div>
+    </td>
+
+    <td>
+      <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.id)">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
