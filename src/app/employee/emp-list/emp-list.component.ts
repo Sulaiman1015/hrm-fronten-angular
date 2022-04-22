@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Employee} from "../employee";
 
 class EmplData {
   id!: string;
@@ -59,7 +58,7 @@ export class EmpListComponent implements OnInit {
 
   i = 1;
   editId: string | null = null;
-  listOfData: EmplData[] = [];
+  empList: EmplData[] = [];
 
   startEdit(id: string): void {
     this.editId = id;
@@ -71,9 +70,11 @@ export class EmpListComponent implements OnInit {
 
   addRow(): void {
 
-    this.listOfData = [
-      ...this.listOfData,
-      {
+    // @ts-ignore
+    this.empList =
+      [
+      ...this.empList
+      /*{
         id: `${this.i}`,
         name: `Edward King`,
         sex: `Male`,
@@ -83,14 +84,14 @@ export class EmpListComponent implements OnInit {
         address: `London, Park Lane no.`,
         salary: `3255`,
         entry_date: `01/01/2020`,
-      }
+      }*/
     ];
     this.i++;
   }
 
   deleteRow(id: string): void {
     // @ts-ignore
-    this.listOfData = this.listOfData.filter(d => d.id !== id);
+    this.empList = this.empList.filter(d => d.id !== id);
   }
 
   ngOnInit(): void {
