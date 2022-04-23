@@ -1,0 +1,16 @@
+
+.login-form {
+  padding-top: 10%;
+}
+.login-form-input {
+  margin-top: 10px;
+  width: 200px;
+}
+
+.login-form-buttom {
+  margin-top: 15px;
+}
+.login-form-forgot {
+  margin-left: 20px;
+  align-content: end;
+}

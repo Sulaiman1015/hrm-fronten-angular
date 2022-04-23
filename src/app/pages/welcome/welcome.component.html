@@ -1,2 +1,31 @@
+<div class="login-form" nz-row nzJustify="space-around" nzAlign="middle">
+  <div nz-col nzSpan="4">
+    <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item class="login-form-input">
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group nzPrefixIcon="user">
+            <input  formControlName="userName" nz-input placeholder="Username" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
 
-<h2>Welcome, you can find all employee in your company and modify </h2>
+      <nz-form-item class="login-form-input">
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input formControlName="password" nz-input type="password" placeholder="Password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="login-form-buttom">
+        <nz-form-control>
+          <button nz-button nzType="primary" [disabled]="validateForm.valid">Log in</button>
+        </nz-form-control>
+        <nz-form-control class="login-form-forgot">
+          <a href="#" (click)="forgotPassword()">Forgot password</a>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>
+
