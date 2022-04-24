@@ -1,4 +1,4 @@
-<!--<nz-table #basicTable [nzData]="employees">
+<nz-table #basicTable [nzData]="emplist">
   <thead>
   <tr>
     <th>ID</th>
@@ -14,16 +14,16 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let employee of employees">
-    <td>{{ employee.ID }}</td>
-    <td>{{ employee.Name }}</td>
-    <td>{{ employee.Sex }}</td>
-    <td>{{ employee.Age }}</td>
-    <td>{{ employee.Phone }}</td>
-    <td>{{ employee.Email }}</td>
-    <td>{{ employee.Address }}</td>
-    <td>{{ employee.Salary }}</td>
-    <td>{{ employee.Entry_Date }}</td>
+  <tr *ngFor="let emp of emplist">
+    <td>{{ emp.id }}</td>
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.sex }}</td>
+    <td>{{ emp.age }}</td>
+    <td>{{ emp.phone }}</td>
+    <td>{{ emp.email }}</td>
+    <td>{{ emp.address }}</td>
+    <td>{{ emp.salary }}</td>
+    <td>{{ emp.entry_date }}</td>
     <td>
       <a>Modify</a>
       <nz-divider nzType="vertical"></nz-divider>
@@ -31,9 +31,9 @@
     </td>
   </tr>
   </tbody>
-</nz-table>-->
+</nz-table>
 
-<nz-table #editRowTable nzBordered [nzData]="empList">
+<!--<nz-table #editRowTable nzBordered [nzData]="emplist">
   <thead>
   <tr>
     <th>ID</th>
@@ -49,61 +49,61 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let employee of editRowTable.data" class="editable-row">
-    <td>{{employee.id}}</td>
+  <tr *ngFor="let data of emplist;" class="editable-row">
+    <td>{{data.id}}</td>
     <td>
-      <div class="editable-cell" [hidden]="editId === employee.id" (click)="startEdit(employee.id)">
-        {{ employee.name }}
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.name }}
       </div>
-      <input [hidden]="editId !== employee.id" type="text" nz-input [(ngModel)]="employee.name" (blur)="stopEdit()" />
+      <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.name" (blur)="stopEdit()" />
     </td>
 
     <td>
-      <div class="editable-cell" [hidden]="editId === employee.id" (click)="startEdit(employee.id)">
-      {{ employee.sex }}
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+      {{ data.sex }}
       </div>
-      <input [hidden]="editId !== employee.id" type="text" nz-input [(ngModel)]="employee.name" (blur)="stopEdit()" />
+      <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.name" (blur)="stopEdit()" />
     </td>
 
     <td>
-      <div class="editable-cell" [hidden]="editId === employee.id" (click)="startEdit(employee.id)">
-        {{ employee.age }}
-      </div>
-    </td>
-
-    <td>
-      <div class="editable-cell" [hidden]="editId === employee.id" (click)="startEdit(employee.id)">
-        {{ employee.phone }}
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.age }}
       </div>
     </td>
 
     <td>
-      <div class="editable-cell" [hidden]="editId === employee.id" (click)="startEdit(employee.id)">
-        {{ employee.email }}
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.phone }}
       </div>
     </td>
 
     <td>
-      <div class="editable-cell" [hidden]="editId === employee.id" (click)="startEdit(employee.id)">
-        {{ employee.address }}
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.email }}
       </div>
     </td>
 
     <td>
-      <div class="editable-cell" [hidden]="editId === employee.id" (click)="startEdit(employee.id)">
-        {{ employee.salary }}
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.address }}
       </div>
     </td>
 
     <td>
-      <div class="editable-cell" [hidden]="editId === employee.id" (click)="startEdit(employee.id)">
-        {{ employee.entry_date }}
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.salary }}
       </div>
     </td>
 
     <td>
-      <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(employee.id)">Delete</a>
+      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+        {{ data.entry_date }}
+      </div>
+    </td>
+
+    <td>
+      <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.id)">Delete</a>
     </td>
   </tr>
   </tbody>
-</nz-table>
+</nz-table>-->
