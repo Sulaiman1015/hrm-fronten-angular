@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//import {WelcomeComponent} from "./pages/welcome/welcome.component";
+import {WelcomeComponent} from "./pages/welcome/welcome.component";
 
 
 const routes: Routes = [
@@ -9,7 +9,6 @@ const routes: Routes = [
   { path:'',loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)},
   { path:'welcome',loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule)}
   /*{ path: 'welcome', component:WelcomeComponent,
-  /!*loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule)*!/
   children:[
     { path:'employee',loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)}
   ]}*/
@@ -17,6 +16,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppRoutingModule { }

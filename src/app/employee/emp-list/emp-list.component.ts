@@ -31,8 +31,8 @@ export class EmpListComponent implements OnInit {
 
   getEmplist(){
     // @ts-ignore
-    this.empService.fetchData().subscribe((data:EmpList[]) => {
-      this.emplist = data;
+    this.empService.fetchData().subscribe((res:EmpList[]) => {
+      this.emplist = res
     })
   }
 
