@@ -1,3 +1,4 @@
+<!--PAGE MODEL 1-->
 <nz-table #basicTable [nzData]="emplist">
   <thead>
   <tr>
@@ -8,7 +9,6 @@
     <th>Phone</th>
     <th>Email</th>
     <th>Address</th>
-    <th>Salary</th>
     <th>Entry_date</th>
     <th>Action</th>
   </tr>
@@ -22,7 +22,6 @@
     <td>{{ emp.phone }}</td>
     <td>{{ emp.email }}</td>
     <td>{{ emp.address }}</td>
-    <td>{{ emp.salary }}</td>
     <td>{{ emp.entry_date }}</td>
     <td>
       <a>Modify</a>
@@ -33,17 +32,20 @@
   </tbody>
 </nz-table>
 
+
+
+
+<!--PAGE MODEL 2-->
 <!--<nz-table #editRowTable nzBordered [nzData]="emplist">
   <thead>
   <tr>
     <th>ID</th>
-    <th nzWidth="15%">Name</th>
+    <th nzWidth="10%">Name</th>
     <th>Sex</th>
     <th>Age</th>
     <th>Phone</th>
     <th>Email</th>
     <th nzWidth="15%">Address</th>
-    <th>Salary</th>
     <th>Entry_Date</th>
     <th>Action</th>
   </tr>
@@ -86,12 +88,6 @@
     <td>
       <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
         {{ data.address }}
-      </div>
-    </td>
-
-    <td>
-      <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
-        {{ data.salary }}
       </div>
     </td>
 

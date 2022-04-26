@@ -2,17 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EmpList } from "../emplist";
 import {EmployeeService} from "../employee.service";
 
-/*class EmpList {
-  id!: number;
-  name!: string;
-  sex!: string;
-  age!: number;
-  phone!: string;
-  email!: string;
-  address!:string;
-  salary!: number;
-  entry_date!:string
-}*/
 
 @Component({
   selector: 'app-emp-list',
@@ -20,6 +9,8 @@ import {EmployeeService} from "../employee.service";
   styleUrls: ['./emp-list.component.css']
 })
 export class EmpListComponent implements OnInit {
+
+  /* FOR PAGE MODEL 1 */
   emplist: EmpList[] = [];
 
   constructor(private empService: EmployeeService) {
@@ -30,14 +21,15 @@ export class EmpListComponent implements OnInit {
   }
 
   getEmplist(){
-    // @ts-ignore
-    this.empService.fetchData().subscribe((res:EmpList[]) => {
-      this.emplist = res
+    this.empService.getEmpList().subscribe((res:EmpList[]) => {
+      this.emplist = res;
     })
   }
 
 
 
+
+  /* FOR PAGE MODEL 2 */
   /*i = 1;
   editId: number | undefined;
   emplist: EmpList[] = [];
@@ -47,7 +39,7 @@ export class EmpListComponent implements OnInit {
   }
 
   stopEdit(): void {
-    this.editId = null;
+    this.editId ;
   }
 
   addRow(): void {
@@ -56,17 +48,6 @@ export class EmpListComponent implements OnInit {
     this.emplist =
       [
       ...this.emplist
-      /!*{
-        id: `${this.i}`,
-        name: `Edward King`,
-        sex: `Male`,
-        age: '32',
-        phone: `012345`,
-        email: `bz@benz.uk`,
-        address: `London, Park Lane no.`,
-        salary: `3255`,
-        entry_date: `01/01/2020`,
-      }*!/
     ];
     this.i++;
   }
@@ -77,9 +58,8 @@ export class EmpListComponent implements OnInit {
   }
 
   getEmplist(){
-    // @ts-ignore
-    this.empService.fetchData().subscribe((data:EmpList[]) => {
-      this.emplist = data;
+    this.empService.getEmpList().subscribe((res:EmpList[]) => {
+      this.emplist = res;
     })
   }
 

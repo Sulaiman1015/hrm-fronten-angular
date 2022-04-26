@@ -11,8 +11,11 @@ export class EmployeeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  fetchData():Observable<EmpList[]>{
-    return this.httpClient.get<EmpList[]>(`${(this.baseUrl)}`)
+  getEmpList():Observable<EmpList[]>{
+    return this.httpClient.get<EmpList[]>(`${this.baseUrl}`)
   }
 
+  createEmp(emp:EmpList):Observable<Object>{
+    return this.httpClient.post(`${this.baseUrl}`,emp)
+  }
 }

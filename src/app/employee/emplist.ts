@@ -6,6 +6,5 @@ export class EmpList {
   phone!: string;
   email!: string;
   address!:string;
-  salary!: number;
   entry_date!:string
 }
